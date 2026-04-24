@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pétalo & Arte — El Arte de Emocionar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* CONFIGURACIÓN BASE */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #fdf6f0; --rose: #c0435a; --deep: #7a1f33; --bark: #3d2016;
+    --gold: #c9963a; --charcoal: #1e1210; --warm: #f9ede3; --green-wa: #25d366;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background-color: var(--cream); color: var(--bark); overflow-x: hidden; }
+
+  /* NEURO-TIP: MARQUESINA DE CONFIANZA */
+  .top-ticker { background: var(--deep); color: white; padding: 10px 0; font-size: 0.8rem; text-transform: uppercase; overflow: hidden; white-space: nowrap; font-weight: 500; }
+  .ticker-wrap { display: inline-block; animation: ticker 40s linear infinite; }
+  @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+  /* BOTÓN WHATSAPP DINÁMICO */
+  .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--green-wa); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; transition: 0.3s; }
+  .wa-status { position: absolute; top: -5px; right: -5px; background: #fff; color: var(--green-wa); font-size: 0.6rem; font-weight: 800; padding: 3px 8px; border-radius: 10px; border: 2px solid var(--green-wa); }
+
+  /* HEADER */
+  header { background: rgba(255,255,255,0.98); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 900; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+  .logo { font-family: 'Playfair Display'; font-size: 1.7rem; font-weight: 700; color: var(--rose); text-decoration: none; }
+  nav ul { display: flex; list-style: none; gap: 2rem; }
+  nav a { text-decoration: none; color: var(--bark); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* HERO - NEURO-DISEÑO */
+  .hero { height: 85vh; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('banner.png') center/cover no-repeat; display: flex; align-items: center; padding: 0 10%; color: white; }
+  .hero-box { max-width: 600px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+  .hero h1 { font-family: 'Playfair Display'; font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; line-height: 1.1; }
+  .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
+
+  /* SECCIÓN PRODUCTOS */
+  .section { padding: 4rem 5%; max-width: 1300px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+  .card { background: white; border-radius: 15px; overflow: hidden; transition: 0.4s; box-shadow: 0 8px 25px rgba(0,0,0,0.05); position: relative; }
+  .card img { width: 100%; height: 400px; object-fit: cover; }
+  .card-content { padding: 2rem; text-align: center; }
+  .badge-best { position: absolute; top: 20px; right: 20px; background: var(--rose); color: white; padding: 6px 15px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; }
+  .btn-buy { display: inline-block; width: 100%; padding: 1.1rem; background: var(--rose); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; text-transform: uppercase; border: none; cursor: pointer; }
+
+  /* SECCIÓN QUIÉNES SOMOS */
+  .about { display: grid; grid-template-columns: 1fr 1fr; align-items: center; background: var(--warm); margin-bottom: 4rem; }
+  .about-img img { width: 100%; height: 550px; object-fit: cover; }
+  .about-text { padding: 5rem; }
+
+  /* GALERÍA SOCIAL PROOF */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; padding: 10px; }
+  .gallery img { width: 100%; height: 250px; object-fit: cover; }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); color: white; padding: 5rem 10% 2rem; }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; }
+
+  @media (max-width: 768px) {
+    .about { grid-template-columns: 1fr; }
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-ticker">
+  <div class="ticker-wrap">
+    🌸 ENVÍOS HOY MISMO EN LIMA METROPOLITANA • MIRAFLORES • SAN ISIDRO • SURCO • SAN BORJA • LA MOLINA • PUEBLO LIBRE 🌸 GARANTÍA DE FRESCURA 100% • PEDIDOS HASTA LAS 4PM •
+  </div>
+</div>
+
+<header>
+  <a href="#" class="logo">PÉTALO & ARTE</a>
+  <nav>
+    <ul>
+      <li><a href="#naturales">Flores</a></li>
+      <li><a href="#artesanales">Artesanía</a></li>
+      <li><a href="#contacto">Hacer Pedido</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-box">
+    <h1>Despierta una Sonrisa Inolvidable</h1>
+    <p>Más que un regalo, una experiencia diseñada para perdurar.</p>
+    <a href="#naturales" class="btn-buy" style="display:inline-block; width:auto; padding: 1.2rem 3rem;">Ver Colección</a>
+  </div>
+</section>
+
+<section id="naturales" class="section">
+  <div style="text-align: center; margin-bottom: 4rem;">
+    <h2 style="font-size: 2.5rem; font-family: 'Playfair Display';">Joyas de la <span>Naturaleza</span></h2>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <img src="ramo girasoles.png" alt="Ramo de Girasoles">
+      <div class="card-content">
+        <h3>Luz de Sol (Girasoles)</h3>
+        <button class="btn-buy" onclick="order('Ramo Girasoles')">Pedir Ahora</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="badge-best">EL MÁS BUSCADO</div>
+      <img src="box deluxe.png" alt="Box Deluxe">
+      <div class="card-content">
+        <h3>Box Deluxe Gold</h3>
+        <button class="btn-buy" onclick="order('Box Deluxe')">Sorprender Ahora</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="orquidea natural.png" alt="Orquidea">
+      <div class="card-content">
+        <h3>Orquídea Majestuosa</h3>
+        <button class="btn-buy" onclick="order('Orquidea')">Lo Quiero</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="caja de rosas.png" alt="Caja de Rosas">
+      <div class="card-content">
+        <h3>Cofre de Rosas</h3>
+        <button class="btn-buy" onclick="order('Caja de Rosas')">Lo Quiero</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="canasta primavera.png" alt="Canasta">
+      <div class="card-content">
+        <h3>Canasta Silvestre</h3>
+        <button class="btn-buy" onclick="order('Canasta')">Lo Quiero</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="about-img"><img src="Copilot_20260424_151552.png" alt="Nosotros"></div>
+  <div class="about-text">
+    <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem;">Cómplices de tu <span>Mensaje</span></h2>
+    <p>Ubicados en Miraflores, Lima, seleccionamos cada pétalo para que tu regalo sea una extensión real de tu sentimiento.</p>
+  </div>
+</section>
+
+<section id="artesanales" class="section">
+  <div style="text-align: center; margin-bottom: 4rem;">
+    <h2 style="font-size: 2.5rem; font-family: 'Playfair Display';">Arte que <span>Perdura</span></h2>
+  </div>
+  <div class="grid">
+    <div class="card"><img src="artesanales1.png" alt="Tocado"><div class="card-content"><h3>Tocado Etéreo</h3><button class="btn-buy" onclick="order('Tocado')">Añadir</button></div></div>
+    <div class="card"><img src="cuaderno floral.png" alt="Cuaderno"><div class="card-content"><h3>Diario Botánico</h3><button class="btn-buy" onclick="order('Cuaderno')">Añadir</button></div></div>
+    <div class="card"><img src="artesanales2.png" alt="Aretes"><div class="card-content"><h3>Aretes Nature</h3><button class="btn-buy" onclick="order('Aretes')">Añadir</button></div></div>
+    <div class="card"><img src="taza PetaloArte.png" alt="Taza"><div class="card-content"><h3>Taza de Autor</h3><button class="btn-buy" onclick="order('Taza')">Añadir</button></div></div>
+    <div class="card"><img src="tote bag.png" alt="Bolsa"><div class="card-content"><h3>Eco-Tote Bag</h3><button class="btn-buy" onclick="order('Tote Bag')">Añadir</button></div></div>
+    <div class="card"><img src="tarjeta especial.png" alt="Tarjeta"><div class="card-content"><h3>Tarjeta de Autor</h3><button class="btn-buy" onclick="order('Tarjeta')">Añadir</button></div></div>
+  </div>
+</section>
+
+<div class="gallery">
+  <img src="clips.png" alt="Detalle">
+  <img src="box deluxe.png" alt="Entrega">
+  <img src="ramo girasoles.png" alt="Alegría">
+  <img src="artesanales1.png" alt="Arte">
+</div>
+
+<section id="contacto" class="section">
+  <div style="max-width: 600px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); text-align: center;">
+    <h2 style="font-family: 'Playfair Display';">Inicia tu Sorpresa</h2>
+    <br>
+    <input type="text" id="nombre" placeholder="Tu Nombre" style="width:100%; padding: 1.2rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 10px;">
+    <select id="producto" style="width:100%; padding: 1.2rem; margin-bottom: 1.5rem; border: 1px solid #ddd; border-radius: 10px;">
+      <option value="Consulta General">¿Qué te interesó?</option>
+      <option value="Box Deluxe">Box Deluxe Gold</option>
+      <option value="Girasoles">Ramo Girasoles</option>
+      <option value="Orquidea">Orquídea</option>
+    </select>
+    <button class="btn-buy" onclick="send()">PEDIR POR WHATSAPP 💬</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col"><h4>PÉTALO & ARTE</h4><p>Diseño floral de autor en Lima.</p></div>
+    <div class="footer-col"><h4>DÓNDE ESTAMOS</h4><li>📍 Miraflores, Lima</li><li>📞 +51 965 846 128</li></div>
+    <div class="footer-col"><h4>GARANTÍA</h4><li>✓ Frescura Certificada</li><li>✓ Entrega Express</li></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/51965846128" class="wa-float" target="_blank">
+  <span class="wa-status">EN LÍNEA</span>
+  <svg width="35" height="35" fill="white" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+</a>
+
+<script>
+  function order(p) { document.getElementById('producto').value = p; document.getElementById('contacto').scrollIntoView({behavior: 'smooth'}); }
+  function send() {
+    const n = document.getElementById('nombre').value;
+    const p = document.getElementById('producto').value;
+    if(!n) return alert("Ingresa tu nombre");
+    window.open(`https://wa.me/51965846128?text=Hola!%20Soy%20${n},%20quiero%20info%20de:%20${p}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
